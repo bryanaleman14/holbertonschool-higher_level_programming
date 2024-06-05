@@ -2,5 +2,6 @@
 
 
 def add_tuple(tuple_a=(), tuple_b=()):
-    tuple_c = (tuple_a[0] + tuple_b[0] if len(tuple_b) > 0 else tuple_a[0], tuple_a[1] + tuple_b[1] if len(tuple_b) > 1 else tuple_a[1])
+    index_max = max(len(tuple_a), len(tuple_b))
+    tuple_c = tuple((tuple_a[i] if i < len(tuple_a) else 0) + (tuple_b[i] if i < len(tuple_b) else 0)  for i in range(index_max))
     return tuple_c
